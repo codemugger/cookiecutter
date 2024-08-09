@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "{{cookiecutter.project_name}}"
+version = "0.1.0"
+description = ""
+authors = ["{{cookiecutter.author}}"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "^1.5.1"
+dvc = "^2.10.0"
+hydra-core = "^1.1.1"
+pdoc3 = "^0.10.0"
+pre-commit = "^2.19.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pandas = "^1.5.1"
+pytest = "^6.2.5"
+pre-commit = "^2.17.0"
+flake8 = "^5.0.4"
+black = "^22.10.0"
+mypy = "^0.982"
+notebook = "^6.4.10"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 80
+include = '\.pyi?$'
+exclude = '''
+/(
+	\.git
+| \.hg
+| \.mypy_cache
+| \.tox
+| \.venv
+| _build
+| buck-out
+| build   
+)/ 
+'''
